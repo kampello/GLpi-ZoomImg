@@ -1,0 +1,4 @@
+/* Opcional: faz o mouse mostrar que a imagem é clicável */
+.timeline-content img, .rich_text_container img {
+    cursor: zoom-in;
+}
