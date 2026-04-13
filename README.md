@@ -18,10 +18,13 @@
 
 ---
 
-## 📸 Demonstração / Screenshot
+## 📸 Como usar?
 
-*(Suba uma imagem para a pasta 'screenshots' e substitua o caminho abaixo)*
-![Screenshot](https://raw.githubusercontent.com/kampello/GLpi-ZoomImg/main/screenshots/preview.jpg)
+Após a instalação, o plugin é ativado automaticamente na visualização de imagens do GLPI.
+
+* **Zoom:** Utilize o **Scroll do rato** ou o gesto de pinça no **trackpad** (expandindo as laterais).
+* **Mover:** Clique, segure e **arraste** a imagem para navegar enquanto o zoom estiver ativo.
+* **Reset:** Clique fora da imagem ou na tecla `Esc` para fechar a visualização.
 
 ---
 
