@@ -1,7 +1,7 @@
 <?php
-
+use Glpi\Plugin\Hooks;
 /**
- * Define a versão do plugin
+ * Definir a versão do plugin
  */
 define('PLUGIN_ZOOMIMG_VERSION', '1.0.0');
 
@@ -12,7 +12,6 @@ function plugin_init_zoomimg() {
    global $PLUGIN_HOOKS;
    $PLUGIN_HOOKS['csrf_compliant']['zoomimg'] = true;
 
-   // ESTA LINHA É A MÁGICA:
    if (Session::getLoginUserID()) {
       $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['zoomimg'] = 'js/zoom.js';
    }
