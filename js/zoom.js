@@ -6,20 +6,20 @@ $(document).ready(function() {
         e.preventDefault();
 
         let imgSrc = $(this).attr('src');
-
-        // Cria a estrutura visual do zoom
-        let zoomHtml = `
-            <div id="zoomimg-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:99999; display:flex; align-items:center; justify-content:center; cursor:zoom-out;">
-                <img src="${imgSrc}" style="max-width:95%; max-height:95%; border:4px solid #fff; border-radius:5px; box-shadow:0 0 20px #000;">
-                <span style="position:absolute; top:20px; right:30px; color:#fff; font-size:40px; cursor:pointer;">&times;</span>
+        // novo sistema overlay
+        let zoomOverlay = $(`
+            <div id="glpi-zoom-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; display:flex; align-items:center; justify-content:center; cursor:zoom-out;">
+                <img src="${imgSrc}" style="max-width:90%; max-height:90%; border:3px solid white; border-radius:5px;">
             </div>
-        `;
+        `);
+
+        $('body').append(zoomOverlay);
 
         $('body').append(zoomHtml);
     });
 
     // Remove o zoom ao clicar em qualquer lugar do fundo escuro
-    $(document).on('click', '#zoomimg-overlay', function() {
+   $(document).on('click', '#glpi-zoom-overlay', function() {
         $(this).remove();
     });
 });
