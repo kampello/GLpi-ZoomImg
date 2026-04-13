@@ -17,9 +17,29 @@ $(document).ready(function() {
 
         $('body').append(zoomHtml);
     });
+    // Função para o Scroll (Wheel)
+    $(document).on('wheel', '#glpi-zoom-overlay', function(e) {
+        e.preventDefault();
+        
+        const delta = e.originalEvent.deltaY;
+        const zoomStep = 0.1;
+        const oldScale = scale;
 
+        // Define a nova escala
+        if (delta > 0) {
+            scale = Math.max(0.5, scale - zoomStep); // Zoom Out
+        } else {
+            scale = Math.min(5, scale + zoomStep);  // Zoom In (máximo 5x)
+        }
+
+        // Aplica o transform no container
+        $('#zoom-container').css('transform', `scale(${scale})`);
+    });
     // Remove o zoom ao clicar em qualquer lugar do fundo escuro
    $(document).on('click', '#glpi-zoom-overlay', function() {
-        $(this).remove();
+        if (e.target.id === 'glpi-zoom-overlay' || e.target.id === 'zoom-container') {
+            $(this).remove();
+            scale = 1;
+        }
     });
 });
