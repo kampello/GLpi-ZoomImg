@@ -1,5 +1,5 @@
 <?php
-use Glpi\Plugin\Hooks;
+
 /**
  * Define a versão do plugin
  */
@@ -12,9 +12,9 @@ function plugin_init_zoomimg() {
    global $PLUGIN_HOOKS;
    $PLUGIN_HOOKS['csrf_compliant']['zoomimg'] = true;
 
+   // ESTA LINHA É A MÁGICA:
    if (Session::getLoginUserID()) {
       $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['zoomimg'] = 'js/zoom.js';
-      $PLUGIN_HOOKS[Hooks::ADD_CSS]['zoomimg']        = 'css/zoom.css';
    }
 }
 
@@ -23,9 +23,9 @@ function plugin_init_zoomimg() {
  */
 function plugin_version_zoomimg() {
    return [
-      'name'           => 'ZoomImg +',
+      'name'           => 'Zoom Img',
       'version'        => PLUGIN_ZOOMIMG_VERSION,
-      'author'         => 'PauloPaulino[JFQ],
+      'author'         => 'PauloPaulino',
       'license'        => 'GPLv2+',
       'homepage'       => 'https://github.com/seu-repo',
       'requirements'   => [
@@ -35,8 +35,7 @@ function plugin_version_zoomimg() {
       ]
    ];
 }
-function plugin_zoomimg_check_prerequisites() { return true; }
-function plugin_zoomimg_check_config($verbose = false) { return true;
+
 /**
  * Checagem de pré-requisitos (obrigatório para não dar erro)
  */
