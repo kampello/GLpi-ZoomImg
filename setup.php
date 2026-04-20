@@ -3,7 +3,7 @@ use Glpi\Plugin\Hooks;
 /**
  * Definir a versão do plugin
  */
-define('PLUGIN_ZOOMIMG_VERSION', '1.0.1');
+define('PLUGIN_ZOOMIMG_VERSION', '1.0.2');
 
 /**
  * Inicialização dos hooks (vazio por enquanto)
