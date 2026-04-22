@@ -26,7 +26,7 @@ function plugin_version_zoomimg() {
       'version'        => PLUGIN_ZOOMIMG_VERSION,
       'author'         => 'PauloPaulino',
       'license'        => 'GPLv2+',
-      'homepage'       => 'https://github.com/seu-repo',
+      'homepage'       => 'https://github.com/kampello/GLpi-ZoomImg/releases',
       'requirements'   => [
          'glpi' => [
             'min' => '10.0.0', // Versão mínima do GLPI
